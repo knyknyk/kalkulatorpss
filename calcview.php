@@ -1,4 +1,7 @@
-<?php require_once dirname(__FILE__) .'/Config.php';?>
+<?php require_once dirname(__FILE__) .'/Config.php';
+$kwota = isset($kwota) ? $kwota : '';
+$lata = isset($lata) ? $lata : '';
+$oprocentowanie = isset($oprocentowanie) ? $oprocentowanie : '';?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
