@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.2, created on 2024-04-11 18:56:23
-  from 'C:\xampp\htdocs\Projekty\zadanie 3\templates\main.html' */
+/* Smarty version 4.5.2, created on 2024-04-12 09:10:45
+  from 'C:\xampp\htdocs\Projekty\zadanie obiektowość\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.2',
-  'unifunc' => 'content_66181637999b23_09151776',
+  'unifunc' => 'content_6618de751e4623_52388578',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '809ffd32ca2ed3c1a0c9eef17cc37a63b44a9758' => 
+    '4f5daf28f6e533a931aca3cadd9ea7ec06e17b57' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Projekty\\zadanie 3\\templates\\main.html',
-      1 => 1712516028,
+      0 => 'C:\\xampp\\htdocs\\Projekty\\zadanie obiektowość\\templates\\main.html',
+      1 => 1712905353,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66181637999b23_09151776 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6618de751e4623_52388578 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
-
 <!doctype html>
 <html lang="pl">
 <head>
@@ -35,7 +34,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 	<title><?php echo (($tmp = $_smarty_tpl->tpl_vars['page_title']->value ?? null)===null||$tmp==='' ? "Tytuł domyślny" ?? null : $tmp);?>
 </title>
 	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
-	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /css/style.css">	
 </head>
 <body>
@@ -53,7 +52,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
 <div class="content">
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_36369570566181637998af7_72870717', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14697393436618de751e36d1_85856134', 'content');
 ?>
 
 </div><!-- content -->
@@ -61,25 +60,24 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_363695705661816379
 <div class="footer">
 	<p>
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_717017614661816379994b8_01805244', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17251294476618de751e3f83_79343952', 'footer');
 ?>
 
 	</p>
 	<p>
-		Widok oparty na stylach <a href="http://purecss.io/" target="_blank">Pure CSS Yahoo!</a>. (opracowanie zadania- Jakub Nyk)
+		Widok oparty na stylach <a href="http://purecss.io/" target="_blank">Pure CSS Yahoo!</a>.
 	</p>
 </div>
 
 </body>
-</html>
-<?php }
+</html><?php }
 /* {block 'content'} */
-class Block_36369570566181637998af7_72870717 extends Smarty_Internal_Block
+class Block_14697393436618de751e36d1_85856134 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_36369570566181637998af7_72870717',
+    0 => 'Block_14697393436618de751e36d1_85856134',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -89,17 +87,17 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'footer'} */
-class Block_717017614661816379994b8_01805244 extends Smarty_Internal_Block
+class Block_17251294476618de751e3f83_79343952 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_717017614661816379994b8_01805244',
+    0 => 'Block_17251294476618de751e3f83_79343952',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-  <?php
+ Domyślna treść stopki .... <?php
 }
 }
 /* {/block 'footer'} */
