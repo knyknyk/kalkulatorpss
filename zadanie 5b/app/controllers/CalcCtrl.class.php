@@ -1,56 +1,83 @@
 <?php
+// W skrypcie definicji kontrolera nie trzeba dołączać już niczego.
+// Kontroler wskazuje tylko za pomocą 'use' te klasy z których jawnie korzysta
+// (gdy korzysta niejawnie to nie musi - np używa obiektu zwracanego przez funkcję)
+
+// Zarejestrowany autoloader klas załaduje odpowiedni plik automatycznie w momencie, gdy skrypt będzie go chciał użyć.
+// Jeśli nie wskaże się klasy za pomocą 'use', to PHP będzie zakładać, iż klasa znajduje się w bieżącej
+// przestrzeni nazw - tutaj jest to przestrzeń 'app\controllers'.
+
+// Przypominam, że tu również są dostępne globalne funkcje pomocnicze - o to nam właściwie chodziło
+
 namespace app\controllers;
+
 
 //zamieniamy zatem 'require' na 'use' wskazując jedynie przestrzeń nazw, w której znajduje się klasa
 use app\forms\CalcForm;
 use app\transfer\CalcResult;
+use core\Messages;
+
 class CalcCtrl {
-	private $msgs;   
-	private $form;   
-	private $result; 
+
+	private $msgs;   //wiadomości dla widoku
+	private $form;   //dane formularza (do obliczeń i dla widoku)
+	private $result; //inne dane dla widoku
+
+
 	public function __construct(){
-		
+		//stworzenie potrzebnych obiektów
+		$this->msgs = new Messages();
 		$this->form = new CalcForm();
 		$this->result = new CalcResult();
 	}
 	
+
 	public function getParams(){
 		$this->form->kwota = isset($_REQUEST ['kwota']) ? $_REQUEST ['kwota'] : null;
 		$this->form->lata = isset($_REQUEST ['lata']) ? $_REQUEST ['lata'] : null;
 		$this->form->oprocentowanie = isset($_REQUEST ['oprocentowanie']) ? $_REQUEST ['oprocentowanie'] : null;
 	}
 	
+	/** 
+	 * Walidacja parametrów
+	 * @return true jeśli brak błedów, false w przeciwnym wypadku 
+	 */
 	public function validate() {
+		// sprawdzenie, czy parametry zostały przekazane
 		if (! (isset ( $this->form->kwota ) && isset ( $this->form->lata ) && isset ( $this->form->oprocentowanie ))) {
-			
-			return false; 
+			// sytuacja wystąpi kiedy np. kontroler zostanie wywołany bezpośrednio - nie z formularza
+			return false; //zakończ walidację z błędem
 		}
 		
 		// sprawdzenie, czy potrzebne wartości zostały przekazane
 		if ($this->form->kwota == "") {
-			$this->msgs->addError('Nie podano wartości pierwszej');
+			$this->msgs->addError('Nie podano kwoty');
 		}
 		if ($this->form->lata == "") {
-			$this->msgs->addError('Nie podano wartości drugiej');
+			$this->msgs->addError('Nie podano lat');
 		}
 		if ($this->form->oprocentowanie == "") {
-			$this->msgs->addError('Nie podano wartości trzeciej');
+			$this->msgs->addError('Nie podano oprocentowania');
 		}
+		// nie ma sensu walidować dalej gdy brak parametrów
 		if (! $this->msgs->isError()) {
+			
+			// sprawdzenie, czy $x i $y są liczbami całkowitymi
 			if (! is_numeric ( $this -> form -> kwota )) {
-				$this->msgs->addError('pierwsza wartość musi być całkowita');
+				$this->msgs->addError('Kwota musi być liczbą całkowitą');
 			}
 			
 			if (! is_numeric ( $this -> form -> lata )) {
-				$this->msgs->addError('druga wartość musi być całkowita');
+				$this->msgs->addError('Lata musi być liczbą całkowitą');
 			}
                         if (! is_numeric ( $this -> form -> oprocentowanie )) {
-				$this->msgs->addError('trzecia wartość musi być całkowita');
+				$this->msgs->addError('Oprocentowanie musi być liczbą całkowitą');
 			}
 		}
 		
 		return ! $this->msgs->isError();
 	}
+	
 	public function process(){
 
 		$this->getparams();
@@ -68,14 +95,22 @@ class CalcCtrl {
 		
 		$this->generateView();
 	}
+	
+	
+	/**
+	 * Wygenerowanie widoku
+	 */
 	public function generateView(){
-		getSmarty()->assign('page_title','zadanie 05a');
-		getSmarty()->assign('page_description','Zmiana w postaci nowej struktury foderów, skryptu inicjalizacji oraz pomocniczych funkcji.');
-		getSmarty()->assign('page_header','...................');
+		//nie trzeba już tworzyć Smarty i przekazywać mu konfiguracji i messages
+		// - wszystko załatwia funkcja getSmarty()
+		
+		getSmarty()->assign('page_title','Przykład 05b');
+		getSmarty()->assign('page_description','Kolejne rozszerzenia dla aplikacja z jednym "punktem wejścia"');
+		getSmarty()->assign('page_header','Kontroler główny');
 					
 		getSmarty()->assign('form',$this->form);
 		getSmarty()->assign('res',$this->result);
 		
-		getSmarty()->display('CalcView.html'); 
+		getSmarty()->display('CalcView.tpl'); // już nie podajemy pełnej ścieżki - foldery widoków są zdefiniowane przy ładowaniu Smarty
 	}
 }

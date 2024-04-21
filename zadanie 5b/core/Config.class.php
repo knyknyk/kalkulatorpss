@@ -1,5 +1,6 @@
 <?php namespace core;
-class config{
+
+class Config{
 	public $root_path;
 	public $server_name;
 	public $server_url;
