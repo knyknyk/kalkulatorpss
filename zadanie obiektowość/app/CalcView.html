@@ -3,20 +3,21 @@
 {block name=footer}stopka{/block}
 
 {block name=content}
-
+<h3 class="major">Prosty kalkulator</h3>
 <h3>Prosty kalkulator</h2>
 
 
-<form class="pure-form pure-form-stacked" action="{$conf->app_url}/app/calc.php" method="post">
+<form  action="{$conf->app_url}/app/calc.php" method="post">
 	<fieldset>
 		<label for="kwota">Pierwsza liczba</label>
-		<input id="kwota" type="text" placeholder="wartość kwota" name="kwota" value="{$form->kwota}">			
+                <input id="kwota" type="text" placeholder="wartość kwota" name="kwota" value="{$form->kwota}">			
 		<label for="lata">Druga liczba</label>
 		<input id="lata" type="text" placeholder="wartość lata" name="lata" value="{$form->lata}">
                 <label for="oprocentowanie">Pierwsza liczba</label>
 		<input id="oprocentowanie" type="text" placeholder="wartość oprocentowanie" name="oprocentowanie" value="{$form->oprocentowanie}">
-	</fieldset>
-	<button type="submit" class="pure-button pure-button-primary">Oblicz</button>
+	</fieldset><input type="submit" value="oblicz" class="primary" />
+    <button type="submit" class="button large" value="Oblicz" class="primary">oblicz</button>
+	
 </form>
 
 <div class="messages">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.2, created on 2024-04-12 09:10:45
+/* Smarty version 4.5.2, created on 2024-04-17 14:43:15
   from 'C:\xampp\htdocs\Projekty\zadanie obiektowość\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.2',
-  'unifunc' => 'content_6618de751e4623_52388578',
+  'unifunc' => 'content_661fc3e3077f70_35967286',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f5daf28f6e533a931aca3cadd9ea7ec06e17b57' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Projekty\\zadanie obiektowość\\templates\\main.html',
-      1 => 1712905353,
+      1 => 1712909950,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6618de751e4623_52388578 (Smarty_Internal_Template $_smarty_tpl) {
+function content_661fc3e3077f70_35967286 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -33,26 +33,35 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ">
 	<title><?php echo (($tmp = $_smarty_tpl->tpl_vars['page_title']->value ?? null)===null||$tmp==='' ? "Tytuł domyślny" ?? null : $tmp);?>
 </title>
-	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
-	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/css/style.css">	
+	
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css">
+     <link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 <body>
+<center>
+<div  class="wrapper">
+    <div class="col-6 col-12-xsmall">
+													
+	<header id="header" class="alt">
+<h1><?php echo (($tmp = $_smarty_tpl->tpl_vars['page_title']->value ?? null)===null||$tmp==='' ? "Tytuł domyślny" ?? null : $tmp);?>
+</h1>
+						
+</header>											
 
-<div class="header">
-	<h1><?php echo (($tmp = $_smarty_tpl->tpl_vars['page_title']->value ?? null)===null||$tmp==='' ? "Tytuł domyślny" ?? null : $tmp);?>
-</h1>
+	
 	<h2><?php echo (($tmp = $_smarty_tpl->tpl_vars['page_header']->value ?? null)===null||$tmp==='' ? "Tytuł domyślny" ?? null : $tmp);?>
-</h1>
+</h2>
 	<p>
 		<?php echo (($tmp = $_smarty_tpl->tpl_vars['page_description']->value ?? null)===null||$tmp==='' ? "Opis domyślny" ?? null : $tmp);?>
 
 	</p>
+        </div>
 </div>
 
 <div class="content">
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14697393436618de751e36d1_85856134', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1643162902661fc3e3076719_83882445', 'content');
 ?>
 
 </div><!-- content -->
@@ -60,7 +69,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14697393436618de75
 <div class="footer">
 	<p>
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17251294476618de751e3f83_79343952', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_423833712661fc3e3077141_50912720', 'footer');
 ?>
 
 	</p>
@@ -68,16 +77,16 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17251294476618de75
 		Widok oparty na stylach <a href="http://purecss.io/" target="_blank">Pure CSS Yahoo!</a>.
 	</p>
 </div>
-
+</center>
 </body>
 </html><?php }
 /* {block 'content'} */
-class Block_14697393436618de751e36d1_85856134 extends Smarty_Internal_Block
+class Block_1643162902661fc3e3076719_83882445 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_14697393436618de751e36d1_85856134',
+    0 => 'Block_1643162902661fc3e3076719_83882445',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -87,12 +96,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'footer'} */
-class Block_17251294476618de751e3f83_79343952 extends Smarty_Internal_Block
+class Block_423833712661fc3e3077141_50912720 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_17251294476618de751e3f83_79343952',
+    0 => 'Block_423833712661fc3e3077141_50912720',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

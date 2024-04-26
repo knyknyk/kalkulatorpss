@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.2, created on 2024-04-12 09:10:49
+/* Smarty version 4.5.2, created on 2024-04-17 14:43:38
   from 'C:\xampp\htdocs\Projekty\zadanie obiektowość\app\CalcView.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.2',
-  'unifunc' => 'content_6618de79837bb0_68684892',
+  'unifunc' => 'content_661fc3fad514b4_85787383',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9de20f359e48c327e0757db89d7df53db237e46b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Projekty\\zadanie obiektowość\\app\\CalcView.html',
-      1 => 1712905499,
+      1 => 1712910463,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6618de79837bb0_68684892 (Smarty_Internal_Template $_smarty_tpl) {
+function content_661fc3fad514b4_85787383 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12601026316618de79824f44_99360843', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_43702223661fc3fad417f9_33783641', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6599542036618de79825964_23536867', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_220799667661fc3fad42444_47583950', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.html");
 }
 /* {block 'footer'} */
-class Block_12601026316618de79824f44_99360843 extends Smarty_Internal_Block
+class Block_43702223661fc3fad417f9_33783641 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_12601026316618de79824f44_99360843',
+    0 => 'Block_43702223661fc3fad417f9_33783641',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,26 +51,26 @@ stopka<?php
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_6599542036618de79825964_23536867 extends Smarty_Internal_Block
+class Block_220799667661fc3fad42444_47583950 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_6599542036618de79825964_23536867',
+    0 => 'Block_220799667661fc3fad42444_47583950',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-
+<h3 class="major">Prosty kalkulator</h3>
 <h3>Prosty kalkulator</h2>
 
 
-<form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+<form  action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /app/calc.php" method="post">
 	<fieldset>
 		<label for="kwota">Pierwsza liczba</label>
-		<input id="kwota" type="text" placeholder="wartość kwota" name="kwota" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->kwota;?>
+                <input id="kwota" type="text" placeholder="wartość kwota" name="kwota" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->kwota;?>
 ">			
 		<label for="lata">Druga liczba</label>
 		<input id="lata" type="text" placeholder="wartość lata" name="lata" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->lata;?>
@@ -78,8 +78,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <label for="oprocentowanie">Pierwsza liczba</label>
 		<input id="oprocentowanie" type="text" placeholder="wartość oprocentowanie" name="oprocentowanie" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->oprocentowanie;?>
 ">
-	</fieldset>
-	<button type="submit" class="pure-button pure-button-primary">Oblicz</button>
+	</fieldset><input type="submit" value="oblicz" class="primary" />
+    <button type="submit" class="button large" value="Oblicz" class="primary">oblicz</button>
+	
 </form>
 
 <div class="messages">
